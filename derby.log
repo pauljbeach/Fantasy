@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Sep 24 06:28:38 EDT 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0183-6f0a-bc96-00001c5618d0 
+on database directory memory:/Users/paul/Documents/R/fantasy/databaseName=metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@246abb95 
+Loaded from file:/Users/paul/spark/spark-3.3.0-bin-hadoop2/jars/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_341-b10
+user.dir=/Users/paul/Documents/R/fantasy
+os.name=Mac OS X
+os.arch=x86_64
+os.version=12.6
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

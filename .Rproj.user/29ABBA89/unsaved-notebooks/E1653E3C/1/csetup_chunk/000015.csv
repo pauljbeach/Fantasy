@@ -1,0 +1,42 @@
+"0","git_sitrep()
+"
+"1","
+"
+"1","── Git global (user) 
+"
+"1","• Name: [34m""pabloplaya""[39m
+"
+"1","• Email: [34m""pauljbeach@gmail.com""[39m
+"
+"1","• Global (user-level) gitignore file:
+"
+"1","• Vaccinated: [34mFALSE[39m
+"
+"1","[33mℹ[39m See `]8;;ide:help:usethis::git_vaccinateusethis::git_vaccinate]8;;()` to learn more.
+"
+"1","• Default Git protocol: [33mℹ[39m Defaulting to [34m""https""[39m Git protocol. [34m""https""[39m
+"
+"1","• Default initial branch name: [90m<unset>[39m
+"
+"1","
+"
+"1","── GitHub user 
+"
+"1","• Default GitHub host: [34m""https://github.com""[39m
+"
+"1","• Personal access token for [34m""https://github.com""[39m: [90m<discovered>[39m
+"
+"1","[31m✖[39m Can't get user information for this token.
+"
+"1","[33mℹ[39m The token may no longer be valid or perhaps it lacks the [34m""user""[39m scope.
+"
+"1","[33mℹ[39m GitHub API error (401): Bad credentials
+"
+"1","
+"
+"1","── [1m[1mActive usethis project: [34m[1m[34m""/Users/paul/Documents/R/fantasy""[34m[1m[39m[1m[22m ──
+"
+"1","
+"
+"1","[33mℹ[39m Active project is not a Git repo.
+"

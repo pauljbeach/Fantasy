@@ -1,0 +1,254 @@
+Player,Historic Stats,Injury Probabilities,SeasonInjury,Projected Games Missed,Projected Points
+"Josh Allen, QB BUF",6||||||,High Risk,26%,1,406.1
+"Lamar Jackson, QB BAL",5|||||,Very Low Risk,9%,0.4,372.2
+"Kyler Murray, QB ARI",5|||||,High Risk,26%,1.2,370.1
+"Justin Herbert, QB LAC",3|||,Medium Risk,15%,1.4,369.3
+"Patrick Mahomes, QB KC",5|||||,Medium Risk,16%,0.9,365.2
+"Jalen Hurts, QB PHI",2||,Low Risk,12%,1.1,360.8
+"Joe Burrow, QB CIN",9|||||||||,Very High Risk,65%,1.5,346.5
+"Russell Wilson, QB DEN",3|||,Low Risk,12%,1.1,346.3
+"Tom Brady, QB TB",7|||||||,Very Low Risk,5%,0.6,343.4
+"Trey Lance, QB SF",3|||,Very Low Risk,10%,0.8,338.7
+"Matthew Stafford, QB LAR",18||||||||||||||||||,Low Risk,12%,1.7,333.7
+"Dak Prescott, QB DAL",6||||||,Low Risk,11%,1.2,325.7
+"Kirk Cousins, QB MIN",1|,Very Low Risk,5%,0.2,314.7
+"Trevor Lawrence, QB JAC",4||||,Very Low Risk,9%,0.5,313.8
+"Derek Carr, QB LVR",9|||||||||,High Risk,36%,1.7,312.7
+"Tua Tagovailoa, QB MIA",9|||||||||,Very High Risk,73%,2.2,311.4
+"Aaron Rodgers, QB GB",10||||||||||,Medium Risk,14%,0.7,306.7
+"Justin Fields, QB CHI",6||||||,Low Risk,13%,2.8,305.1
+"Ryan Tannehill, QB TEN",4||||,Low Risk,13%,1,289.3
+"Daniel Jones, QB NYG",7|||||||,Very High Risk,61%,1.7,287.2
+"Carson Wentz, QB WAS",8||||||||,Very High Risk,77%,2.1,278
+"Jameis Winston, QB NO",7|||||||,High Risk,29%,0.9,271.6
+"Baker Mayfield, QB CAR",8||||||||,Low Risk,12%,0.4,271
+"Mac Jones, QB NE",1|,Very Low Risk,11%,1.6,268.1
+"Jared Goff, QB DET",4||||,Very High Risk,45%,1.7,259
+"Matt Ryan, QB IND",3|||,Very Low Risk,10%,0.6,258.8
+"Marcus Mariota, QB ATL",11|||||||||||,High Risk,40%,1.1,258.3
+"Zach Wilson, QB NYJ",4||||,Medium Risk,17%,0.5,257.4
+"Davis Mills, QB HOU",2||,Low Risk,13%,1.1,244.6
+"Geno Smith, QB SEA",4||||,Medium Risk,19%,1.1,214
+"Deshaun Watson, QB CLE",6||||||,Medium Risk,17%,1,125.8
+"Drew Lock, QB SEA",5|||||,High Risk,24%,0.4,82.2
+"Sam Darnold, QB CAR",7|||||||,Very High Risk,43%,1.7,31.6
+"Tyrod Taylor, QB NYG",11|||||||||||,High Risk,34%,2.7,30.5
+"Andy Dalton, QB NO",6||||||,High Risk,36%,1.3,25.4
+"Teddy Bridgewater, QB MIA",9|||||||||,Low Risk,12%,0.4,18
+"Jimmy Garoppolo, QB SF",8||||||||,High Risk,22%,0.5,17
+"Taylor Heinicke, QB WAS",5|||||,Medium Risk,15%,0.6,16
+"Jordan Love, QB GB",2||,Very Low Risk,10%,1.8,7.3
+"Christian McCaffrey, RB CAR",6||||||,High Risk,84%,2.2,334.9
+"Jonathan Taylor, RB IND",3|||,Medium Risk,61%,1.8,328.3
+"Austin Ekeler, RB LAC",10||||||||||,High Risk,85%,3.5,306.7
+"Joe Mixon, RB CIN",7|||||||,Very High Risk,88%,2,281.8
+"Saquon Barkley, RB NYG",7|||||||,High Risk,82%,2.5,281.2
+"Najee Harris, RB PIT",6||||||,Medium Risk,53%,1.7,280.1
+"Dalvin Cook, RB MIN",12||||||||||||,Very High Risk,94%,3.6,279.2
+"Derrick Henry, RB TEN",4||||,Very High Risk,89%,1.9,269.7
+"Alvin Kamara, RB NO",6||||||,Medium Risk,74%,2.7,267
+"Leonard Fournette, RB TB",11|||||||||||,High Risk,87%,2.2,265.7
+"D'Andre Swift, RB DET",5|||||,Very High Risk,88%,2.7,263.1
+"James Conner, RB ARI",10||||||||||,High Risk,83%,2.5,261.7
+"Aaron Jones, RB GB",9|||||||||,Very High Risk,87%,3.4,259.7
+"Javonte Williams, RB DEN",1|,Low Risk,41%,2.1,247.9
+"Nick Chubb, RB CLE",4||||,Medium Risk,60%,0.6,236.2
+"Travis Etienne, RB JAC",3|||,High Risk,77%,1.7,233.1
+"Ezekiel Elliott, RB DAL",7|||||||,High Risk,82%,2.5,226
+"Cam Akers, RB LAR",4||||,Medium Risk,57%,1.2,222.6
+"David Montgomery, RB CHI",4||||,Medium Risk,76%,1.5,221
+"J.K. Dobbins, RB BAL",3|||,High Risk,79%,2.8,211.7
+"Josh Jacobs, RB LVR",7|||||||,Medium Risk,68%,1.8,211.3
+"Tony Pollard, RB DAL",1|,Medium Risk,49%,1.2,201.2
+"Clyde Edwards-Helaire, RB KC",6||||||,Very High Risk,91%,3.1,196.2
+"Cordarrelle Patterson, RB ATL",10||||||||||,Very High Risk,89%,2.6,195.1
+"A.J. Dillon, RB GB",5|||||,High Risk,82%,1.9,194
+"Antonio Gibson, RB WAS",5|||||,Medium Risk,56%,0.8,189.6
+"Chase Edmonds, RB MIA",9|||||||||,Very High Risk,89%,4.1,188.1
+"Miles Sanders, RB PHI",9|||||||||,Very High Risk,94%,3.9,181.2
+"Kareem Hunt, RB CLE",6||||||,Very Low Risk,20%,0.4,178.5
+"Rhamondre Stevenson, RB NE",3|||,Very Low Risk,25%,1.1,173.2
+"Devin Singletary, RB BUF",1|,Very High Risk,91%,3.7,166.6
+"Rashaad Penny, RB SEA",7|||||||,Medium Risk,66%,2,146.8
+"Damien Harris, RB NE",9|||||||||,Very High Risk,88%,3.5,144.8
+"Darrell Henderson, RB LAR",8||||||||,Very High Risk,91%,2.6,140.6
+"Melvin Gordon, RB DEN",12||||||||||||,Very High Risk,92%,4.5,139.2
+"Nyheim Hines, RB IND",3|||,Low Risk,41%,1.7,131.7
+"J.D. McKissic, RB WAS",3|||,Very Low Risk,9%,0.5,130.9
+"Michael Carter, RB NYJ",3|||,Very Low Risk,19%,0.8,128.7
+"Kenneth Gainwell, RB PHI",0.00,Very Low Risk,11%,0.4,127
+"Alexander Mattison, RB MIN",3|||,Low Risk,45%,3.4,124.8
+"James Robinson, RB JAC",3|||,Medium Risk,72%,1.3,123.6
+"Jamaal Williams, RB DET",10||||||||||,Very High Risk,91%,2.4,122.5
+"Raheem Mostert, RB MIA",10||||||||||,Very High Risk,92%,3,109.7
+"Khalil Herbert, RB CHI",2||,Very Low Risk,29%,0.5,98
+"Mark Ingram, RB NO",9|||||||||,High Risk,81%,3.6,93.2
+"Jerick McKinnon, RB KC",4||||,Medium Risk,57%,1.6,87.5
+"Damien Williams, RB ATL",6||||||,Very High Risk,92%,3.4,82.5
+"Ronald Jones, RB KC",7|||||||,Medium Risk,64%,1.3,81.2
+"Rex Burkhead, RB HOU",9|||||||||,High Risk,83%,3.8,79.7
+"Ty Montgomery, RB NE",10||||||||||,High Risk,79%,4.7,74.4
+"Samaje Perine, RB CIN",4||||,Low Risk,43%,1.7,72.2
+"Zack Moss, RB BUF",6||||||,High Risk,80%,2.3,72.1
+"Darrel Williams, RB ARI",6||||||,High Risk,80%,2.9,70.8
+"Ameer Abdullah, RB LVR",4||||,Low Risk,30%,1.2,69.9
+"Kenyan Drake, RB BAL",9|||||||||,Medium Risk,49%,0.9,67.6
+"Gus Edwards, RB BAL",4||||,Very Low Risk,16%,1,65.5
+"Chuba Hubbard, RB CAR",2||,Medium Risk,49%,1.8,64.8
+"Mike Davis, RB BAL",4||||,Low Risk,45%,0.9,63.2
+"Sony Michel, RB LAC",10||||||||||,Medium Risk,69%,1.6,62.7
+"Joshua Kelley, RB LAC",1|,Very Low Risk,19%,0.7,61.8
+"Devontae Booker, RB UNS",3|||,Low Risk,35%,1,57.5
+"Ke'Shawn Vaughn, RB TB",1|,Very Low Risk,10%,1,56.1
+"Giovani Bernard, RB TB",14||||||||||||||,Low Risk,31%,0.3,53.6
+"Myles Gaskin, RB MIA",4||||,High Risk,85%,2.3,49.4
+"Demetric Felton, RB CLE",0.00,Very Low Risk,7%,0.2,46.9
+"Justice Hill, RB BAL",4||||,Very Low Risk,16%,0.9,41
+"Benny Snell, RB PIT",2||,Low Risk,39%,1,21
+"Jermar Jefferson, RB DET",5|||||,Low Risk,39%,1.1,18.7
+"Travis Kelce, TE KC",8||||||||,Medium Risk,42%,0.7,274
+"Mark Andrews, TE BAL",4||||,Low Risk,35%,0.7,241
+"Kyle Pitts, TE ATL",4||||,Medium Risk,73%,2.6,224.8
+"Darren Waller, TE LVR",9|||||||||,Low Risk,41%,2.1,207.7
+"Dallas Goedert, TE PHI",6||||||,Medium Risk,58%,0.9,201.9
+"George Kittle, TE SF",10||||||||||,Very High Risk,92%,3.1,198.2
+"Dalton Schultz, TE DAL",2||,Very Low Risk,15%,1.9,196.3
+"T.J. Hockenson, TE DET",6||||||,High Risk,74%,3.7,183.9
+"Zach Ertz, TE ARI",11|||||||||||,Very High Risk,89%,4.6,163.1
+"Dawson Knox, TE BUF",3|||,High Risk,85%,2.9,163.1
+"Pat Freiermuth, TE PIT",3|||,Very Low Risk,13%,0.4,159.2
+"Evan Engram, TE JAC",9|||||||||,Very High Risk,92%,3.8,157.6
+"Irv Smith, TE MIN",4||||,Very Low Risk,22%,0.5,155.9
+"Tyler Higbee, TE LAR",8||||||||,High Risk,79%,2.7,155.8
+"Cole Kmet, TE CHI",2||,Medium Risk,63%,1.5,155.1
+"David Njoku, TE CLE",3|||,High Risk,81%,5.9,153.5
+"Albert Okwuegbunam, TE DEN",6||||||,Very High Risk,90%,2.8,152.7
+"Gerald Everett, TE LAC",4||||,Medium Risk,45%,1.5,152.7
+"Hunter Henry, TE NE",7|||||||,Medium Risk,65%,1.8,152
+"Mike Gesicki, TE MIA",2||,Low Risk,31%,0.7,150.2
+"Noah Fant, TE SEA",6||||||,Very High Risk,89%,3.1,146.4
+"Hayden Hurst, TE CIN",5|||||,Medium Risk,51%,1.8,143.4
+"Logan Thomas, TE WAS",4||||,Very Low Risk,23%,1.4,141.8
+"Robert Tonyan, TE GB",3|||,Medium Risk,54%,1.2,134.4
+"Austin Hooper, TE TEN",4||||,Very Low Risk,22%,0.9,130
+"Brevin Jordan, TE HOU",5|||||,High Risk,82%,3.4,128
+"Mo Alie-Cox, TE IND",3|||,High Risk,80%,2,101.2
+"Cameron Brate, TE TB",2||,Low Risk,38%,1.6,88.8
+"Harrison Bryant, TE CLE",1|,Low Risk,32%,0.9,84.6
+"Jonnu Smith, TE NE",8||||||||,Very High Risk,89%,3.4,84.3
+"Taysom Hill, TE NO",10||||||||||,Medium Risk,14%,0.4,84.2
+"Kyle Rudolph, TE TB",12||||||||||||,Very Low Risk,28%,0.6,77.2
+"Tyler Conklin, TE NYJ",3|||,Low Risk,31%,0.5,74.5
+"C.J. Uzomah, TE NYJ",6||||||,Very Low Risk,27%,0.7,72.7
+"Adam Trautman, TE NO",2||,Low Risk,31%,1.2,62.6
+"Jared Cook, TE UNS",9|||||||||,High Risk,78%,3,54.6
+"Josiah Deguara, TE GB",4||||,High Risk,85%,2.5,51.2
+"Eric Ebron, TE UNS",10||||||||||,Very High Risk,86%,2.8,43.9
+"Brycen Hopkins, TE LAR",1|,Very Low Risk,18%,0.8,40.2
+"Foster Moreau, TE LVR",1|,Medium Risk,61%,1.6,36.8
+"Rob Gronkowski, TE TB",21|||||||||||||||||||||,Very High Risk,94%,3.7,33.5
+"Maxx Williams, TE ARI",12||||||||||||,Medium Risk,51%,0.8,28.6
+"Hunter Long, TE MIA",1|,Low Risk,32%,0.6,25.2
+"Chris Herndon, TE NO",3|||,Very High Risk,88%,2.8,23.8
+"Jace Sternberger, TE UNS",2||,Low Risk,37%,0.9,23.4
+"Cooper Kupp, WR LAR",5|||||,Medium Risk,75%,2,360
+"Justin Jefferson, WR MIN",3|||,Low Risk,61%,1.6,335.6
+"Ja'Marr Chase, WR CIN",1|,Very Low Risk,34%,1.1,319.5
+"Stefon Diggs, WR BUF",7|||||||,Very Low Risk,39%,1.6,299.4
+"Davante Adams, WR LVR",10||||||||||,High Risk,83%,3.6,298.1
+"CeeDee Lamb, WR DAL",6||||||,Very Low Risk,24%,1.5,295.1
+"Tyreek Hill, WR MIA",7|||||||,Medium Risk,75%,2.7,285
+"Tee Higgins, WR CIN",6||||||,Very High Risk,91%,3.9,266.5
+"D.J. Moore, WR CAR",4||||,Low Risk,59%,1.1,264.7
+"Keenan Allen, WR LAC",12||||||||||||,High Risk,79%,4.4,255.8
+"Mike Evans, WR TB",11|||||||||||,Low Risk,46%,1.9,254
+"Michael Pittman, WR IND",6||||||,Very High Risk,91%,2.7,251.3
+"Mike Williams, WR LAC",7|||||||,Very High Risk,93%,2.9,249.8
+"A.J. Brown, WR PHI",6||||||,Low Risk,50%,1.2,245.3
+"Brandin Cooks, WR HOU",5|||||,Very Low Risk,34%,1,244.8
+"Deebo Samuel, WR SF",12||||||||||||,Medium Risk,74%,2.4,244.2
+"Allen Robinson, WR LAR",10||||||||||,Very High Risk,93%,2.8,239.2
+"Jaylen Waddle, WR MIA",2||,Low Risk,43%,1.7,237.3
+"Terry McLaurin, WR WAS",6||||||,Medium Risk,78%,2.1,236.2
+"Jerry Jeudy, WR DEN",6||||||,High Risk,85%,2.7,234
+"Diontae Johnson, WR PIT",6||||||,High Risk,84%,3.8,231.9
+"Courtland Sutton, WR DEN",5|||||,Low Risk,47%,1.8,230.2
+"D.K. Metcalf, WR SEA",5|||||,Very Low Risk,41%,1.9,229.4
+"Marquise Brown, WR ARI",9|||||||||,Very High Risk,91%,3.6,228
+"Rashod Bateman, WR BAL",2||,Very Low Risk,16%,0.3,226.3
+"Chris Godwin, WR TB",7|||||||,Low Risk,58%,1.4,222.3
+"Michael Thomas, WR NO",6||||||,High Risk,81%,1.9,217.3
+"Adam Thielen, WR MIN",7|||||||,Medium Risk,67%,2.1,214.5
+"JuJu Smith-Schuster, WR KC",13|||||||||||||,Very High Risk,91%,3.6,214
+"Darnell Mooney, WR CHI",3|||,Medium Risk,79%,2.2,212.8
+"Gabriel Davis, WR BUF",2||,Very Low Risk,12%,1,211.1
+"Amon-Ra St. Brown, WR DET",3|||,Low Risk,58%,3.3,209.2
+"Hunter Renfrow, WR LVR",3|||,Medium Risk,63%,1.5,207.7
+"Tyler Lockett, WR SEA",5|||||,Low Risk,49%,1.5,207.1
+"Christian Kirk, WR JAC",3|||,High Risk,84%,2.4,200.4
+"Amari Cooper, WR CLE",14||||||||||||||,Low Risk,53%,1.4,199.1
+"DeAndre Hopkins, WR ARI",14||||||||||||||,Low Risk,58%,2.7,192.2
+"Elijah Moore, WR NYJ",2||,Very Low Risk,16%,0.6,191.9
+"DeVonta Smith, WR PHI",6||||||,High Risk,89%,3.7,189
+"Brandon Aiyuk, WR SF",4||||,Low Risk,51%,1.7,188.6
+"Kadarius Toney, WR NYG",10||||||||||,High Risk,85%,4.4,186
+"Marquez Valdes-Scantling, WR KC",7|||||||,Very Low Risk,17%,1.7,181.7
+"Robert Woods, WR TEN",12||||||||||||,Very High Risk,91%,2.9,181.1
+"Allen Lazard, WR GB",2||,Very Low Risk,15%,0.3,178.4
+"Rondale Moore, WR ARI",4||||,High Risk,82%,4.3,172.1
+"Russell Gage, WR TB",8||||||||,Medium Risk,70%,1.8,172
+"Chase Claypool, WR PIT",5|||||,Very Low Risk,37%,2.5,171.5
+"Tyler Boyd, WR CIN",3|||,Medium Risk,72%,2.2,171.5
+"Julio Jones, WR TB",32||||||||||||||||||||||||||||||||,Very High Risk,91%,2.5,166.3
+"D.J. Chark, WR DET",9|||||||||,High Risk,87%,3.6,165.6
+"Jakobi Meyers, WR NE",1|,Very Low Risk,35%,0.9,164.5
+"Robbie Anderson, WR CAR",4||||,High Risk,81%,2.6,164.2
+"Parris Campbell, WR IND",9|||||||||,Very Low Risk,33%,1.5,157.5
+"Marvin Jones, WR JAC",9|||||||||,High Risk,88%,2.3,156.9
+"Corey Davis, WR NYJ",11|||||||||||,Very High Risk,91%,3.2,156
+"Michael Gallup, WR DAL",5|||||,Medium Risk,78%,2.1,155.2
+"Jarvis Landry, WR NO",9|||||||||,Medium Risk,69%,1.9,154.7
+"Kenny Golladay, WR NYG",10||||||||||,High Risk,90%,3.3,153.3
+"Mecole Hardman, WR KC",1|,Low Risk,49%,1.6,152.5
+"Van Jefferson, WR LAR",6||||||,Low Risk,61%,1.9,151.3
+"Nico Collins, WR HOU",3|||,Very Low Risk,16%,0.2,148.6
+"DeVante Parker, WR NE",17|||||||||||||||||,High Risk,84%,2.6,146.3
+"Curtis Samuel, WR WAS",7|||||||,Medium Risk,74%,2.2,143.8
+"K.J. Hamler, WR DEN",6||||||,Very High Risk,91%,4.5,133.4
+"Sammy Watkins, WR GB",21|||||||||||||||||||||,Very High Risk,94%,3.1,129.4
+"Bryan Edwards, WR ATL",5|||||,Low Risk,50%,1.4,127.1
+"Zay Jones, WR JAC",5|||||,Low Risk,49%,1.2,123.1
+"Will Fuller, WR UNS",15|||||||||||||||,Very High Risk,93%,2.9,120.1
+"Cedrick Wilson, WR MIA",2||,Medium Risk,71%,1.8,116.2
+"Sterling Shepard, WR NYG",14||||||||||||||,Low Risk,61%,1.7,116.1
+"Randall Cobb, WR GB",16||||||||||||||||,Very High Risk,94%,2.7,115.2
+"Jamison Crowder, WR BUF",13|||||||||||||,High Risk,90%,3.5,111.3
+"A.J. Green, WR ARI",14||||||||||||||,Low Risk,59%,2.4,109
+"Kendrick Bourne, WR NE",0.00,Very Low Risk,11%,0.5,103.6
+"Cole Beasley, WR UNS",5|||||,Low Risk,47%,1,99.2
+"Nelson Agholor, WR NE",6||||||,Medium Risk,63%,1.6,97
+"Odell Beckham Jr., WR UNS",17|||||||||||||||||,Low Risk,53%,1.7,92.7
+"Laviska Shenault, WR CAR",4||||,Medium Risk,70%,3.5,92.6
+"James Washington, WR DAL",6||||||,Very Low Risk,39%,1.4,87.3
+"D'Wayne Eskridge, WR SEA",5|||||,Very Low Risk,33%,1.8,83.8
+"Darius Slayton, WR NYG",5|||||,Medium Risk,66%,2.2,81.4
+"Terrace Marshall, WR CAR",6||||||,Low Risk,58%,1.7,81
+"Tre'Quan Smith, WR NO",8||||||||,Medium Risk,75%,2,73
+"Tyler Johnson, WR HOU",1|,Very Low Risk,8%,0.6,71.7
+"Equanimeous St. Brown, WR CHI",6||||||,High Risk,90%,3.2,68
+"Dyami Brown, WR WAS",3|||,Very Low Risk,26%,0.7,65.1
+"Rashard Higgins, WR CAR",5|||||,High Risk,88%,3.2,64.2
+"Amari Rodgers, WR GB",1|,Very Low Risk,25%,0.6,61.1
+"Marquise Goodwin, WR SEA",15|||||||||||||||,Very High Risk,94%,2.4,57.5
+"Dante Pettis, WR CHI",4||||,Very High Risk,91%,3.5,56.4
+"Marquez Callaway, WR NO",4||||,Very High Risk,92%,3.3,55.5
+"Jalen Reagor, WR MIN",4||||,High Risk,80%,2.2,54.9
+"Breshad Perriman, WR TB",13|||||||||||||,Medium Risk,79%,3.3,48
+"Phillip Dorsett, WR HOU",7|||||||,Low Risk,43%,0.7,47.4
+"Andy Isabella, WR ARI",1|,Very Low Risk,12%,0.4,46.9
+"N'Keal Harry, WR CHI",6||||||,High Risk,81%,2.4,45.8
+"Tylan Wallace, WR BAL",2||,Medium Risk,73%,2.9,41.1
+"Tutu Atwell, WR LAR",0.00,Very Low Risk,10%,0.3,37.6
+"Denzel Mims, WR NYJ",7|||||||,Medium Risk,78%,3.7,31.8
+"Miles Boykin, WR PIT",1|,Very Low Risk,27%,1.4,29.4
+"Calvin Ridley, WR ATL",3|||,Low Risk,49%,1.8,0

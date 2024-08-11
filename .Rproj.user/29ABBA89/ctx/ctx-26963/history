@@ -1,0 +1,512 @@
+distinct(name) %>%
+mutate(name = str_remove(name, "(?<=\\().+") %>% str_remove("\\(") %>% trimws) %>%
+pull(name) %>% paste(collapse = "|")
+fle
+fle <-list.files("./NIV",pattern = ".xlsx",full.names = T)
+fle
+sd <- ffanalytics::scrape_data(week = 0,
+season = 2023,
+pos = c("QB", "RB", "WR", "TE", "K", "DST")
+)
+sd <- ffanalytics::scrape_data(week = 16,
+season = 2023,
+pos = c("QB", "RB", "WR", "TE", "K", "DST")
+)
+sd <- ffanalytics::scrape_data(week = 16,
+season = 2023,
+pos = c("QB", "RB", "WR", "TE", "K", "DST")
+)
+ffs <- espn_connect(league_id = 762538, season = 2022)
+??espn_connect
+shelf(ffscrapr)
+library(librarian)
+shelf(ffscrapr)
+ffs <- espn_connect(league_id = 762538, season = 2022)
+ffs <- espn_connect(league_id = 762538, season = 2023)
+ids <- ff_franchises(ffs) %>% select(franchise_id, franchise_abbrev)
+ids
+ffscrapr::espn_players()
+fflr::list_players()
+fflr::ffl_id(762538)
+fflr::list_players()
+fflr::player_info()
+fflr::all_players()
+fflr::list_players()
+fflr::list_players() %>%
+filter(firstName %in% "Eagles")
+pl <- fflr::list_players()
+pl %>% filter(firstName %in% "Eagles")
+shelf(tidyvere)
+shelf(tidyverse)
+pl %>% filter(firstName %in% "Eagles")
+pl %>% filter(firstName %in% "eagles")
+pl
+pl <- fflr::list_players(position = "D/ST")
+ffs
+scores_raw %>%
+group_by(teamId) %>%
+mutate(cs = cumsum(totalPoints),
+time = 1:n()) %>% drop_na() %>%
+ggplot(aes(x = time, y = cs, color = as.factor(teamId)))+
+geom_line()
+scores_raw <- fflr::tidy_scores(leagueHistory = T) %>% bind_rows()
+scores_raw
+raw <- map_df(year, ~ map(week,
+~ paste0(
+"https://raw.githubusercontent.com/fantasydatapros/data/master/weekly/",
+.y,
+"/week",
+.x,
+".csv") %>%
+read_csv(show_col_types = F) %>%
+as_tibble() %>%
+clean_names() %>%
+mutate(week = .x, year = .y), .y = .x))
+library(fitdistrplus)
+library(logspline)
+library(librarian)
+shelf(tidyverse,janitor, EnvStats)
+year <- 2010:2021 %>% as.character()
+week <- 1:17 %>% as.character()
+raw <- map_df(year, ~ map(week,
+~ paste0(
+"https://raw.githubusercontent.com/fantasydatapros/data/master/weekly/",
+.y,
+"/week",
+.x,
+".csv") %>%
+read_csv(show_col_types = F) %>%
+as_tibble() %>%
+clean_names() %>%
+mutate(week = .x, year = .y), .y = .x))
+scores <- c(3,4,5)
+shelf(MASS)
+fitdist(scores)
+fitdist(scores,"t")
+# Mutate-----
+scores %>% filter(matchupPeriodId <= 3) %>%
+group_by(abbrev) %>%
+summarise(expectedWins = mean(expectedWins)*3) %>%
+arrange(desc(expectedWins))
+shelf(easystats, tidyverse, ggdist, fflr, ggthemes, ggrepel,
+geomtextpath, ggforce, ggridges,ggbeeswarm, ggpubr, fitdistrplus)
+scores <- fflr::tidy_scores(leagueHistory = T)
+# Mutate-----
+scores %>% filter(matchupPeriodId <= 3) %>%
+group_by(abbrev) %>%
+summarise(expectedWins = mean(expectedWins)*3) %>%
+arrange(desc(expectedWins))
+scorehist <- combine_history(tidy_scores,useMatchup = F)
+sh <- scorehist %>%
+filter(points > 0, scoringPeriodId < 14) %>%
+nest(data = -seasonId) %>%
+mutate(fit = map(data,~
+dplyr::select(.,points) %>%
+as_vector()  %>%
+fitdist("norm")) %>%
+map("estimate"),
+mean = map(fit,"mean"),
+sd = map(fit,"sd")) %>%
+unnest(cols = c(data,mean,sd)) %>%
+select(-fit) %>%
+mutate(ew = pnorm(points, mean = mean, sd = sd)) %>%
+group_by(seasonId,matchupId, teamId) %>%
+mutate(pointsum = sum(points)) %>%
+group_by(seasonId, matchupId) %>%
+mutate(isWinner = as.numeric(pointsum == max(pointsum))) %>%
+group_by(teamId,seasonId) %>%
+summarise(expectedWins = mean(ew)*max(scoringPeriodId),
+wins = sum(isWinner),
+points = sum(points))
+combine_history(league_standings) %>%
+filter(seasonId > 2018)
+scoresum <- sh %>%
+summarise(expectedWins = sum(expectedWins, na.rm = T)/length(seasonId),
+wins = sum(wins)/length(seasonId),
+wae = (wins-expectedWins)*length(seasonId),
+points = sum(points)/length(seasonId)) %>%
+left_join(fflr::league_teams())
+#------
+scoresum %>%
+ungroup() |>
+mutate(luck = (wins - expectedWins),
+abbrev = toupper(abbrev)) %>%
+ggplot(aes(x = points, y = wins))+
+geom_smooth(method = "lm",
+formula = y~x,
+se = F,
+color = "black",
+size = .5,
+linetype = "dashed")+
+geom_point(aes(color = luck, fill = luck),color = "black", size = 2.5, shape = 21, alpha = .7)+
+geom_label_repel(aes(label = abbrev),
+color = "grey25",
+size = 4,
+family = "Gill Sans",
+label.size = NA,
+label.padding = .01,
+segment.curvature = .5,nudge_x = 1,
+segment.alpha = .5,
+min.segment.length = 0,
+force_pull = 0,
+)+
+geom_rangeframe()+
+labs(x = "POINTS PER SEASON",
+y = "WINS PER SEASON",
+title = "FANTASY PERFORMACE",
+subtitle = "SINCE 2019")+
+scale_fill_viridis_c("WINS ABOVE EXPECTED \n (PER SEASON)",
+breaks = c(seq(-1.5,1.5,.5)),
+labels = c("",-1,"",0,"",1,""), alpha = .7)+
+guides(fill = "none")+
+# guide_colorbar(title.position = "left",
+#                               title.theme = element_text(size = 10,
+#                                                          color ="grey25",
+#                                                          family = "Gill Sans"),
+#                               direction = "vertical",
+#                               title.hjust = .5,
+#                               barheight = unit(2,"cm"),
+#                               barwidth = unit(.3,"cm"),
+#                               nrow = 1, show.limits = F,
+#                               frame.colour = "black",
+#                               ticks.colour = "black",
+#                                 ),
+# color = "none")+
+theme_tufte(base_family = "Gill Sans",base_size = 12)+
+theme(legend.position = c(.7,.2),
+axis.title = element_text(face ="plain", color = "black"),
+legend.title = element_text(face ="plain", color = "black"),
+axis.title.x = element_text(hjust = .2),
+axis.title.y = element_text(hjust = .7))
+fscores <- combine_history(tidy_scores,useMatchup = F)
+curid <- fscores %>% filter(seasonId == 2022) %>% distinct(teamId, name = abbrev)
+fscores %>%
+group_by(seasonId,matchupId, teamId) %>%
+mutate(pointsum = sum(points)) %>%
+group_by(seasonId, matchupId) %>%
+mutate(isWinner = as.factor(pointsum == max(pointsum))) %>%
+group_by(teamId) %>%
+mutate(pointmean = median(points)) %>%
+left_join(curid) %>%
+ungroup %>%
+mutate(name = toupper(name),
+name = fct_reorder(name, points, mean)) %>%
+filter(points > 0) %>%
+ggplot(aes(y = name, x = points))+
+labs(x = NULL,
+y = "POINTS",
+title = "WEEKLY POINT TOTAL DISTRIBUTION",
+subtitle = "WINS HIGHLIGHTED IN RED")+
+#geom_beeswarm(groupOnX = F, alpha = .2, aes(color = isWinner),dodge.width = 1)+
+# stat_halfeye(position = "dodge",
+#              width = .8,
+#              fill = "black",
+#              alpha = .3,
+#              point_interval = mean_qi)+
+stat_dots(side = "right",
+data = . %>% filter(isWinner == T),
+width = .8,
+xmin = 0,
+alpha = 1,
+aes(fill = isWinner, color = isWinner))+
+geom_text_repel(data = . %>% filter(points %in% c(slice_max(.,points, n = 3) %>%
+select(points) %>%
+as_vector(),
+slice_min(.,points, n = 3) %>%
+select(points) %>%
+as_vector())),
+aes(label = points),
+size = 3,
+family = "Gill Sans",
+color = "grey",arrow = arrow(length = unit(.1,"cm")),
+segment.curvature = -.5,
+min.segment.length = 0,
+nudge_x = 0,
+nudge_y = .1,
+)+
+stat_dots(side = "left",data = . %>% filter(isWinner == F),
+width = .8,
+xmin = 0,
+alpha = 1,
+aes(fill = isWinner, color = isWinner))+
+stat_pointinterval(aes(alpha = .8),point_interval = mean_qi)+
+geom_rangeframe(inherit.aes = F, aes(y = name, x = points, group = name))+
+scale_color_metro(guide = "none")+
+scale_fill_metro(guide = "none")+
+guides(alpha = "none")+
+theme_tufte(base_family = "Gill Sans")+
+theme(panel.grid.major.x = element_line(color = "grey"),
+axis.text.y = element_text(hjust = 1, face = "bold"),
+aspect.ratio = 1.2)
+ph <- nflreadr::load_player_stats(2000:2022) %>% as_tibble() %>%
+filter(season_type == "REG")
+sched_raw <- nflreadr::load_schedules()
+sched <- sched_raw %>%
+select(season, week,team = home_team,opp = away_team, score = home_score) %>%
+bind_rows( sched_raw %>% select(season, week,
+team = away_team,
+opp = home_team, score = away_score)) %>%
+mutate(across(c(team, opp),~case_when(.== "STL"~ "LA",
+. == "SD" ~ "LAC",
+. == "OAK" ~"LV",
+T ~ .)))
+phk <- nflreadr::load_player_stats(2000:2022,stat_type = "kicking") %>% as_tibble()%>%
+mutate(fantasy_points_ppr = pat_made - pat_missed - fg_missed + 3*fg_made_30_39+ 4*fg_made_40_49+5*fg_made_50_59+5*fg_made_60_ ,
+position = "K") %>%
+filter(season_type == "REG") %>%
+select(season, week,recent_team  = team,position, player_display_name =player_name,fantasy_points_ppr, pat_made,fg_made)
+# Def -----
+def <- ph %>% group_by(week,season,team = recent_team) %>%
+summarise(across(c(
+rushing_yards,
+sacks,
+passing_yards,
+rushing_tds,
+passing_tds,
+passing_2pt_conversions,
+rushing_2pt_conversions,
+rushing_fumbles_lost,
+interceptions),sum)) %>%
+left_join(sched, by = c("team", "season", "week")) %>%
+left_join(phk %>% group_by(season, week, team) %>%
+summarise(fg_made = sum(fg_made), pat_made = sum(pat_made)),
+by = c("team", "season", "week")) %>%
+mutate(total_yards = rushing_yards + passing_yards,
+pbin = as.numeric(as.character(cut(score,
+breaks = c(0,1,7,14,28,35,46, Inf),
+labels = c(5,4,3,1,-1,-3,-5)))),
+tybin = as.numeric(as.character(cut(total_yards,
+breaks = c(0,100,200,300,350,400,450,500,550,Inf),
+labels = c(5,3,2,1,-1,-3,-5,-6,-7)))),
+across(c(pat_made,fg_made), ~replace_na(.,0)),
+implied_def_points =score - (6*rushing_tds +6*passing_tds + 3*fg_made + pat_made)
+)
+phk <- nflreadr::load_player_stats(2000:2022,stat_type = "kicking") %>% as_tibble()%>%
+mutate(fantasy_points_ppr = pat_made - pat_missed - fg_missed + 3*fg_made_30_39+ 4*fg_made_40_49+5*fg_made_50_59+5*fg_made_60_ ,
+position = "K") %>%
+filter(season_type == "REG") %>%
+select(season, week,recent_team  = team,position, player_display_name =player_name,fantasy_points_ppr, pat_made,fg_made)
+phk
+ph <- nflreadr::load_player_stats(2000:2022) %>% as_tibble() %>%
+filter(season_type == "REG")
+ph
+distinct(ph,position)
+# Def -----
+def <- ph %>% group_by(week,season,team = recent_team) %>%
+summarise(across(c(
+rushing_yards,
+sacks,
+passing_yards,
+rushing_tds,
+passing_tds,
+passing_2pt_conversions,
+rushing_2pt_conversions,
+rushing_fumbles_lost,
+interceptions),sum)) %>%
+left_join(sched, by = c("team", "season", "week")) %>%
+left_join(phk %>% group_by(season, week, team) %>%
+summarise(fg_made = sum(fg_made), pat_made = sum(pat_made)),
+by = c("team", "season", "week")) %>%
+mutate(total_yards = rushing_yards + passing_yards,
+pbin = as.numeric(as.character(cut(score,
+breaks = c(0,1,7,14,28,35,46, Inf),
+labels = c(5,4,3,1,-1,-3,-5)))),
+tybin = as.numeric(as.character(cut(total_yards,
+breaks = c(0,100,200,300,350,400,450,500,550,Inf),
+labels = c(5,3,2,1,-1,-3,-5,-6,-7)))),
+across(c(pat_made,fg_made), ~replace_na(.,0)),
+implied_def_points =score - (6*rushing_tds +6*passing_tds + 3*fg_made + pat_made)
+)
+sched
+phk
+# Def -----
+def <- ph %>% group_by(week,season,team = recent_team) %>%
+summarise(across(c(
+rushing_yards,
+sacks,
+passing_yards,
+rushing_tds,
+passing_tds,
+passing_2pt_conversions,
+rushing_2pt_conversions,
+rushing_fumbles_lost,
+interceptions),sum)) %>%
+left_join(sched, by = c("team", "season", "week")) %>%
+left_join(phk %>% group_by(season, week, team) %>%
+summarise(fg_made = sum(fg_made), pat_made = sum(pat_made)),
+by = c("team", "season", "week"))
+# Def -----
+def <- ph %>% group_by(week,season,team = recent_team) %>%
+summarise(across(c(
+rushing_yards,
+sacks,
+passing_yards,
+rushing_tds,
+passing_tds,
+passing_2pt_conversions,
+rushing_2pt_conversions,
+rushing_fumbles_lost,
+interceptions),sum)) %>%
+left_join(sched, by = c("team", "season", "week")) %>%
+left_join(phk %>% group_by(season, week, team = recent_team) %>%
+summarise(fg_made = sum(fg_made), pat_made = sum(pat_made)),
+by = c("team", "season", "week"))
+def
+# Def -----
+def <- ph %>% group_by(week,season,team = recent_team) %>%
+summarise(across(c(
+rushing_yards,
+sacks,
+passing_yards,
+rushing_tds,
+passing_tds,
+passing_2pt_conversions,
+rushing_2pt_conversions,
+rushing_fumbles_lost,
+interceptions),sum)) %>%
+left_join(sched, by = c("team", "season", "week")) %>%
+left_join(phk %>% group_by(season, week, team = recent_team) %>%
+summarise(fg_made = sum(fg_made), pat_made = sum(pat_made)),
+by = c("team", "season", "week")) %>%
+mutate(total_yards = rushing_yards + passing_yards,
+pbin = as.numeric(as.character(cut(score,
+breaks = c(0,1,7,14,28,35,46, Inf),
+labels = c(5,4,3,1,-1,-3,-5)))),
+tybin = as.numeric(as.character(cut(total_yards,
+breaks = c(0,100,200,300,350,400,450,500,550,Inf),
+labels = c(5,3,2,1,-1,-3,-5,-6,-7)))),
+across(c(pat_made,fg_made), ~replace_na(.,0)),
+implied_def_points =score - (6*rushing_tds +6*passing_tds + 3*fg_made + pat_made)
+)
+def2 <- def %>%
+left_join(def %>% select(season, week, "team" = opp, idp = implied_def_points),
+by = c("season", "week", "team")) %>%
+mutate(fantasy_points_ppr = idp + pbin + tybin + 2*interceptions + 2*rushing_fumbles_lost+sacks,
+position = "DST") %>%
+select(season, week,
+player_display_name = opp, recent_team = opp,
+position,
+fantasy_points_ppr,
+total_yards,score, opp = team)
+# top players ----
+top_players <- ph %>%
+filter(position %in% c("QB", "RB", "WR", "TE", "DST"),
+season < 2022) %>%
+bind_rows(phk)%>%
+bind_rows(def2) %>%
+group_by(player_display_name,season, position, recent_team) %>%
+summarise(points = sum(fantasy_points_ppr, na.rm = T),
+sd = sd(fantasy_points_ppr, na.rm = T),
+games = n()) %>%
+group_by(position) %>%
+slice_max(points, n = 3) %>%
+select(player_display_name, points, season)
+top_s_players <- ph %>%
+filter(position %in% c("QB", "RB", "WR", "TE", "DST"),
+season < 2022) %>%
+bind_rows(phk) %>%
+bind_rows(def2) %>%
+group_by(player_display_name,season, position, recent_team) %>%
+summarise(points = sum(fantasy_points_ppr, na.rm = T),
+sd = sd(fantasy_points_ppr, na.rm = T),
+games = n()) %>%
+group_by(position, season) %>%
+slice_max(points, n = 1) %>%
+select(player_display_name, points, season) %>%
+group_by(position) %>%
+slice_max(points, n = 3)
+# create df graph ----
+phs <- ph %>%
+filter(position %in% c("QB", "RB", "WR", "TE")) %>%
+bind_rows(phk) %>%
+bind_rows(def2) %>%
+filter(season < 2022) %>%
+group_by(player_display_name,season,recent_team, position) %>%
+summarise(points = sum(fantasy_points_ppr, na.rm = T),
+sd = sd(fantasy_points_ppr, na.rm = T),
+games = n()) %>%
+split(~position+season) %>%
+map2_df(.,rep(c(14,14,14,35,14,35),22),
+~ ungroup(.x) %>%
+slice_max(points, n = .y) %>%
+arrange(desc(points))) %>%
+mutate(position = fct_reorder(position,points,mean,.desc = T))
+# raincloud ----
+phs %>%
+ggplot(aes(x = points, y = position, fill = position, color = position))+
+stat_halfeye(position = "dodge",height = 1)+
+stat_dots(side = "left", height = .8)+
+theme_tufte(base_family = "Gill Sans", base_size = 13)+
+theme(axis.text.y = element_text(face = "bold"))+
+geom_rangeframe(inherit.aes = F, aes(x = points, y = position))+
+guides(fill = "none", color = 'none', alpha = "none")+
+labs(y = NULL,
+x = "TOTAL POINTS",
+title = "SEASON TOTAL DISTRIBUTION OF LIKELY FANTASY STARTERS",
+subtitle  = "2000 - 2021 SEASONS")+
+stat_pointinterval(color = "black", aes(alpha = .8))+
+geom_text_repel(data = top_players,inherit.aes = F,
+size = 2,
+family = "Gill Sans",
+segment.curvature = .4,
+segment.alpha = .3,
+nudge_y = .5,
+nudge_x = 20,
+aes(label = paste0(player_display_name, "\n", season, " (", points, ")"),
+x = points, y = position))+
+scale_color_metro(aesthetics = c("color", "fill"))
+def2
+def2$fantasy_points_ppr %>% mean()
+def2$fantasy_points_ppr %>% mean(na.rm = T)
+def2$fantasy_points_ppr %>% sd(na.rm = T)
+ggdist()
+shelf(ggdist)
+ggdist
+ggdist::
+ggdist::
+shelf(ExtDist)
+bestDist(def2$fantasy_points_ppr)
+def2$fantasy_points_ppr
+bestDist(def2$fantasy_points_ppr %>% drop_na())
+def2$fantasy_points_ppr %>% drop_na()
+def2 %>% drop_na(fantasy_points_ppr) %>% pull(fantasy_points_ppr)
+def2 %>% drop_na(fantasy_points_ppr) %>% pull(fantasy_points_ppr) %>%
+view()
+defp <- def2 %>% drop_na(fantasy_points_ppr) %>% pull(fantasy_points_ppr) %>%
+view()
+defp <- def2 %>% drop_na(fantasy_points_ppr) %>% pull(fantasy_points_ppr)
+bestDist(defp)
+bestDist(defp,criterion = "logLik")
+bd <- bestDist(defp,criterion = "logLik")
+bd
+attr(bd)
+beta(-3.4e1,4.5e7)
+beta(-3.4e1,4.5e7)
+beta(4.02e1,4.44e7)
+beta(4.02e1,4.44e7)
+beta(4.02e1,4.44e7)
+fitdist(defp)
+fitdist(defp,distr = "beta")
+ffs <- espn_connect(league_id = 762538, season = 2024)
+??espn_connect
+shelf(tidyverse, ffscrapr)
+library(librarian)
+shelf(tidyverse, ffscrapr)
+ffs <- espn_connect(league_id = 762538, season = 2024)
+ffs
+shelf(tidyverse, ffscrapr,fflr)
+fflr::ffl_id(762538)
+ids <- ff_franchises(ffs) %>% select(franchise_id, franchise_abbrev)
+scores_raw <- fflr::tidy_scores(leagueHistory = T) %>% bind_rows()
+fflr
+shelf(tidyverse, ffscrapr,fflr)
+scores_raw <- fflr::tidy_scores(leagueHistory = T) %>% bind_rows()
+ff_franchises
+ffs
+update.packages()
+update.packages(ask = F)
+warnings()
+update.packages(ask = F)
+update.packages(ask = F)
+update.packages(ask = F)
+install.packages("curl")

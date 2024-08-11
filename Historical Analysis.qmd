@@ -1,0 +1,36 @@
+---
+title: "Historical Analysis 2023"
+author: "Paul Beach"
+format: html
+editor: visual
+---
+
+```{r setup}
+shelf(fflr)
+
+fflr::ffl_id(762538)
+
+```
+
+```{r transactions}
+
+fflr::
+trans <- fflr::transaction_counter(leagueHistory = T) %>% 
+  setNames(paste0("y", 2016:2023))
+
+scores <- fflr::tidy_scores(leagueHistory = T)
+
+scores %>% 
+  bind_rows() %>% 
+  summarise(across(expectedWins,~sum(.)),
+            across(isWinner,~sum(.)),
+            .by = c(abbrev, seasonId)) %>% 
+  left_join(
+  trans %>% bind_rows() %>% 
+  summarise(across(acquisitions,sum),.by = c(abbrev, seasonId))
+  ) %>% 
+  ggplot(aes(expectedWins, isWinner))+
+  geom_point()+
+  geom_smooth(method = 'lm')+
+  geom_label(aes(label = abbrev))
+```

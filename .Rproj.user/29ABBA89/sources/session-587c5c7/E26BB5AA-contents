@@ -1,0 +1,15 @@
+library(librarian)
+shelf(tidyverse, janitor, FantasyFootballAnalytics/ffanalytics, fflr,
+      ffscrapr, ggrepel, ggbeeswarm, zoo,
+      Rglpk,ggthemes)
+ffl_id(762538,overwrite = T)
+fflr::draft_recap()
+
+
+
+conn <- ffscrapr::espn_connect(season = 2023, league_id = 762538)
+draft <- ffscrapr::ff_draft(conn)
+fflr::league_simulation(leagueHistory = F)
+draft %>% view()
+
+

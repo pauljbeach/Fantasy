@@ -1,0 +1,12 @@
+---
+title: "24 Projections"
+format: html
+editor: visual
+---
+
+```{r setup}
+shelf(usethis)
+shelf(ffscrapr,FantasyFootballAnalytics/ffanalytics)
+git_sitrep()
+    
+```

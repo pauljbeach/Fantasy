@@ -1,0 +1,46 @@
+
+library(librarian)
+shelf(tidyverse, janitor, ffanalytics, fflr, ffscrapr, ggrepel, ggbeeswarm, zoo)
+
+espn_rank <- function(season = 2022,id = 762538){
+conn <- espn_connect(season,id)
+
+xff <- xff <- list(players = list(
+  limit = 1000,
+  sortPercOwned = 
+    list(sortAsc = FALSE,
+         sortPriority = 1),
+  filterStatsForTopScoringPeriodIDs = 
+    list(value = 2,
+         additionalValue = c(paste0("00", conn$season)))
+)) %>%
+  jsonlite::toJSON(auto_unbox = TRUE)
+pls <- espn_getendpoint(conn, view = "kona_player_info", x_fantasy_filter = xff)
+
+null_val <- map_dbl(1:length(pls$content$players),
+    ~pls$content$players[[.x]]$player$draftRanksByRankType$PPR$rank %>% is.null() %>% as.numeric())
+
+pls$content$players <- pls$content$players[-c(which(null_val == 1))]
+espn_rank <- map_dbl(1:length(pls$content$players),
+    ~pls$content$players[[.x]]$player$draftRanksByRankType$PPR$rank)
+espn_id <- map_dbl(1:length(pls$content$players),
+                 ~pls$content$players[[.x]]$id)
+espn_list <- tibble(espn_rank, espn_id) 
+dp <- ffscrapr::dp_playerids() %>% 
+  select(espn_id,mfl_id) %>% 
+  drop_na() %>%
+  mutate(espn_id = as.numeric(espn_id))
+return(espn_list %>% left_join(dp) %>% select(espn_rank,id = mfl_id ))
+}
+
+
+espn_vor <- function(season = 2022, id = 762538){
+ conn <- espn_connect(season, id)
+  espn_getendpoint(conn)
+}
+
+
+
+ffl_id("https://fantasy.espn.com/football/team?leagueId=762538&seasonId=2022&teamId=1&fromTeamId=1")
+draft <- fflr::draft_recap(leagueHistory = T)
+

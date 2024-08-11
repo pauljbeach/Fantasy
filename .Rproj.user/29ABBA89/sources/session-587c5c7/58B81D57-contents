@@ -1,0 +1,6 @@
+install.packages("tidyverse")
+install.packages("ffscrapr")
+install.packages("remotes")
+install.packages("librarian")
+library(librarian)
+fflr::

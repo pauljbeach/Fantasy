@@ -1,0 +1,38 @@
+"0","fflr::ffl_id
+"
+"1","function (leagueId = getOption(""fflr.leagueId""), overwrite = FALSE) 
+"
+"1","{
+"
+"1","    if (is.null(leagueId)) {
+"
+"1","        stop(""No `fflr.leagueId` option found, set with `options()` or `ffl_id()`"")
+"
+"1","    }
+"
+"1","    else if (grepl(""^http"", leagueId)) {
+"
+"1","        pattern <- regexpr(pattern = ""leagueId\\=\\d{2,}"", text = leagueId)
+"
+"1","        leagueId <- gsub(""\\D"", """", regmatches(leagueId, m = pattern))
+"
+"1","    }
+"
+"1","    if (overwrite || is.null(getOption(""fflr.leagueId""))) {
+"
+"1","        message(sprintf(""Temporarily set `fflr.leagueId` option to %s"", 
+"
+"1","            leagueId))
+"
+"1","        options(fflr.leagueId = leagueId)
+"
+"1","    }
+"
+"1","    return(as.character(leagueId))
+"
+"1","}
+"
+"1","<bytecode: 0x7f9d6a563708>
+"
+"1","<environment: namespace:fflr>
+"
